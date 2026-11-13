@@ -8,4 +8,6 @@ import java.util.UUID;
 
 public interface FollowersRepository extends MongoRepository<Follower, String> {
     List<Follower> findAllByMyId(UUID myId);
+
+    void deleteByMyIdAndFollowerId(UUID myId, UUID followerId);
 }
